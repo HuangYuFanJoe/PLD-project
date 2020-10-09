@@ -1,0 +1,4 @@
+verilog isim_temp "one_bit_compare_noless.vf"
+verilog isim_temp "fourbit_compare_new.vf"
+verilog isim_temp "test4bit.v"
+verilog isim_temp "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

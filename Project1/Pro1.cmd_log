@@ -1,0 +1,4 @@
+sch2hdl -intstyle ise -family virtex5 -verilog Pro1_drc.vf -w C:/Users/USER/Desktop/S0454012/ha/Pro1.sch 
+xst -intstyle ise -ifn "C:/Users/USER/Desktop/S0454012/fuck/Pro1.xst" -ofn "C:/Users/USER/Desktop/S0454012/fuck/Pro1.syr" 
+sch2hdl -intstyle ise -family virtex5 -verilog Pro1_drc.vf -w C:/Users/USER/Desktop/S0454012/ha/Pro1.sch 
+xst -intstyle ise -ifn "C:/Users/USER/Desktop/S0454012/Project1/Pro1.xst" -ofn "C:/Users/USER/Desktop/S0454012/Project1/Pro1.syr" 

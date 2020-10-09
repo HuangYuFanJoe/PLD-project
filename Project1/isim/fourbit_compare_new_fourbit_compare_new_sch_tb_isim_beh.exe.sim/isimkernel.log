@@ -1,0 +1,29 @@
+Command line:
+   fourbit_compare_new_fourbit_compare_new_sch_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  50882
+
+Fri Apr 07 00:11:52 2017
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 848.577 Meg
+
+ Total Signals          : 155
+ Total Nets             : 52
+ Total Signal Drivers   : 44
+ Total Blocks           : 34
+ Total Primitive Blocks : 28
+ Total Processes        : 47
+ Total Traceable Variables  : 27
+ Total Scalar Nets and Variables : 141
+Total Line Count : 51
+
+ Total Simulation Time: 0.078125 sec
+
+ Current Memory Usage: 1163.15 Meg
+
+Fri Apr 07 00:12:31 2017
+

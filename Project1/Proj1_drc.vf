@@ -1,0 +1,375 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : Proj1_drc.vf
+// /___/   /\     Timestamp : 04/07/2017 11:31:36
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\sch2hdl.exe -intstyle ise -family virtex5 -verilog Proj1_drc.vf -w C:/Users/USER/Desktop/S0454012/ha/Proj1.sch
+//Design Name: Proj1
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale  100 ps / 10 ps
+
+module M2_1_HXILINX_Proj1 (O, D0, D1, S0);
+    
+
+   output O;
+
+   input  D0;
+   input  D1;
+   input  S0;
+
+   reg O;
+
+   always @ ( D0 or D1 or S0)
+   begin
+      case(S0)
+      1'b0 : O <= D0;
+      1'b1 : O <= D1;
+      endcase
+   end
+    
+endmodule
+`timescale 1ns / 1ps
+
+module Fa_MUSER_Proj1(a, 
+                      b, 
+                      ci, 
+                      co, 
+                      s);
+
+    input a;
+    input b;
+    input ci;
+   output co;
+   output s;
+   
+   wire XLXN_6;
+   wire XLXN_15;
+   wire XLXN_16;
+   
+   XOR2  XLXI_1 (.I0(b), 
+                .I1(a), 
+                .O(XLXN_6));
+   XOR2  XLXI_2 (.I0(ci), 
+                .I1(XLXN_6), 
+                .O(s));
+   AND2  XLXI_3 (.I0(ci), 
+                .I1(XLXN_6), 
+                .O(XLXN_15));
+   AND2  XLXI_4 (.I0(b), 
+                .I1(a), 
+                .O(XLXN_16));
+   OR2  XLXI_5 (.I0(XLXN_16), 
+               .I1(XLXN_15), 
+               .O(co));
+endmodule
+`timescale 1ns / 1ps
+
+module one_bit_compare_noless_MUSER_Proj1(a, 
+                                          b, 
+                                          bigger, 
+                                          equal);
+
+    input a;
+    input b;
+   output bigger;
+   output equal;
+   
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_22;
+   wire bigger_DUMMY;
+   
+   assign bigger = bigger_DUMMY;
+   NAND2  XLXI_1 (.I0(a), 
+                 .I1(a), 
+                 .O(XLXN_14));
+   NAND2  XLXI_2 (.I0(b), 
+                 .I1(b), 
+                 .O(XLXN_15));
+   AND2  XLXI_3 (.I0(b), 
+                .I1(XLXN_14), 
+                .O(bigger_DUMMY));
+   AND2  XLXI_4 (.I0(XLXN_15), 
+                .I1(a), 
+                .O(XLXN_22));
+   NOR2  XLXI_5 (.I0(XLXN_22), 
+                .I1(bigger_DUMMY), 
+                .O(equal));
+endmodule
+`timescale 1ns / 1ps
+
+module fourbit_compare_new_MUSER_Proj1(a0, 
+                                       a1, 
+                                       a2, 
+                                       a3, 
+                                       b0, 
+                                       b1, 
+                                       b2, 
+                                       b3, 
+                                       bigger);
+
+    input a0;
+    input a1;
+    input a2;
+    input a3;
+    input b0;
+    input b1;
+    input b2;
+    input b3;
+   output bigger;
+   
+   wire XLXN_1;
+   wire XLXN_7;
+   wire XLXN_11;
+   wire XLXN_12;
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_16;
+   wire XLXN_19;
+   wire XLXN_22;
+   wire XLXN_23;
+   wire XLXN_27;
+   wire XLXN_28;
+   wire XLXN_30;
+   wire XLXN_32;
+   
+   one_bit_compare_noless_MUSER_Proj1  XLXI_2 (.a(a3), 
+                                              .b(b3), 
+                                              .bigger(XLXN_16), 
+                                              .equal(XLXN_1));
+   one_bit_compare_noless_MUSER_Proj1  XLXI_3 (.a(a2), 
+                                              .b(b2), 
+                                              .bigger(XLXN_7), 
+                                              .equal(XLXN_12));
+   one_bit_compare_noless_MUSER_Proj1  XLXI_4 (.a(a1), 
+                                              .b(b1), 
+                                              .bigger(XLXN_11), 
+                                              .equal(XLXN_15));
+   one_bit_compare_noless_MUSER_Proj1  XLXI_5 (.a(a0), 
+                                              .b(b0), 
+                                              .bigger(XLXN_14), 
+                                              .equal(XLXN_30));
+   AND2  XLXI_6 (.I0(XLXN_7), 
+                .I1(XLXN_1), 
+                .O(XLXN_19));
+   AND3  XLXI_7 (.I0(XLXN_12), 
+                .I1(XLXN_1), 
+                .I2(XLXN_11), 
+                .O(XLXN_22));
+   AND4  XLXI_8 (.I0(XLXN_15), 
+                .I1(XLXN_12), 
+                .I2(XLXN_1), 
+                .I3(XLXN_14), 
+                .O(XLXN_23));
+   OR4  XLXI_9 (.I0(XLXN_23), 
+               .I1(XLXN_22), 
+               .I2(XLXN_19), 
+               .I3(XLXN_16), 
+               .O(XLXN_27));
+   (* HU_SET = "XLXI_10_0" *) 
+   M2_1_HXILINX_Proj1  XLXI_10 (.D0(XLXN_27), 
+                               .D1(XLXN_28), 
+                               .S0(XLXN_32), 
+                               .O(bigger));
+   GND  XLXI_11 (.G(XLXN_28));
+   AND4  XLXI_12 (.I0(XLXN_30), 
+                 .I1(XLXN_15), 
+                 .I2(XLXN_12), 
+                 .I3(XLXN_1), 
+                 .O(XLXN_32));
+endmodule
+`timescale 1ns / 1ps
+
+module Proj1(a, 
+             b, 
+             M, 
+             R, 
+             sign);
+
+    input [3:0] a;
+    input [3:0] b;
+    input M;
+   output [4:0] R;
+   output sign;
+   
+   wire b_bigger_than_a;
+   wire XLXN_12;
+   wire XLXN_20;
+   wire XLXN_21;
+   wire XLXN_22;
+   wire XLXN_36;
+   wire XLXN_38;
+   wire XLXN_233;
+   wire XLXN_244;
+   wire XLXN_245;
+   wire XLXN_258;
+   wire XLXN_265;
+   wire XLXN_267;
+   wire XLXN_271;
+   wire XLXN_329;
+   wire XLXN_330;
+   wire XLXN_333;
+   wire XLXN_336;
+   wire XLXN_342;
+   wire XLXN_343;
+   wire XLXN_353;
+   wire XLXN_378;
+   wire XLXN_422;
+   wire XLXN_423;
+   wire XLXN_427;
+   wire XLXN_432;
+   wire XLXN_435;
+   wire XLXN_438;
+   wire XLXN_462;
+   wire XLXN_464;
+   wire XLXN_488;
+   wire XLXN_489;
+   
+   (* HU_SET = "XLXI_6_1" *) 
+   M2_1_HXILINX_Proj1  XLXI_6 (.D0(XLXN_329), 
+                              .D1(XLXN_330), 
+                              .S0(M), 
+                              .O(XLXN_20));
+   (* HU_SET = "XLXI_7_2" *) 
+   M2_1_HXILINX_Proj1  XLXI_7 (.D0(XLXN_333), 
+                              .D1(XLXN_336), 
+                              .S0(M), 
+                              .O(XLXN_21));
+   (* HU_SET = "XLXI_8_13" *) 
+   M2_1_HXILINX_Proj1  XLXI_8 (.D0(XLXN_342), 
+                              .D1(XLXN_343), 
+                              .S0(M), 
+                              .O(XLXN_22));
+   (* HU_SET = "XLXI_9_14" *) 
+   M2_1_HXILINX_Proj1  XLXI_9 (.D0(XLXN_423), 
+                              .D1(XLXN_422), 
+                              .S0(M), 
+                              .O(XLXN_12));
+   (* HU_SET = "XLXI_53_8" *) 
+   M2_1_HXILINX_Proj1  XLXI_53 (.D0(a[0]), 
+                               .D1(b[0]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_329));
+   (* HU_SET = "XLXI_54_9" *) 
+   M2_1_HXILINX_Proj1  XLXI_54 (.D0(b[0]), 
+                               .D1(a[0]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_258));
+   (* HU_SET = "XLXI_55_10" *) 
+   M2_1_HXILINX_Proj1  XLXI_55 (.D0(a[1]), 
+                               .D1(b[1]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_333));
+   (* HU_SET = "XLXI_56_3" *) 
+   M2_1_HXILINX_Proj1  XLXI_56 (.D0(b[1]), 
+                               .D1(a[1]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_265));
+   (* HU_SET = "XLXI_57_4" *) 
+   M2_1_HXILINX_Proj1  XLXI_57 (.D0(a[2]), 
+                               .D1(b[2]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_342));
+   (* HU_SET = "XLXI_58_5" *) 
+   M2_1_HXILINX_Proj1  XLXI_58 (.D0(b[2]), 
+                               .D1(a[2]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_267));
+   (* HU_SET = "XLXI_59_6" *) 
+   M2_1_HXILINX_Proj1  XLXI_59 (.D0(a[3]), 
+                               .D1(b[3]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_423));
+   (* HU_SET = "XLXI_60_7" *) 
+   M2_1_HXILINX_Proj1  XLXI_60 (.D0(b[3]), 
+                               .D1(a[3]), 
+                               .S0(b_bigger_than_a), 
+                               .O(XLXN_271));
+   AND2  XLXI_64 (.I0(b_bigger_than_a), 
+                 .I1(M), 
+                 .O(sign));
+   (* HU_SET = "XLXI_65_11" *) 
+   M2_1_HXILINX_Proj1  XLXI_65 (.D0(XLXN_245), 
+                               .D1(XLXN_244), 
+                               .S0(M), 
+                               .O(R[4]));
+   GND  XLXI_69 (.G(XLXN_244));
+   fourbit_compare_new_MUSER_Proj1  XLXI_86 (.a0(b[0]), 
+                                            .a1(a[1]), 
+                                            .a2(a[2]), 
+                                            .a3(a[3]), 
+                                            .b0(b[0]), 
+                                            .b1(b[1]), 
+                                            .b2(b[2]), 
+                                            .b3(b[3]), 
+                                            .bigger(b_bigger_than_a));
+   INV  XLXI_92 (.I(XLXN_329), 
+                .O(XLXN_330));
+   INV  XLXI_93 (.I(XLXN_333), 
+                .O(XLXN_336));
+   INV  XLXI_94 (.I(XLXN_342), 
+                .O(XLXN_343));
+   INV  XLXI_95 (.I(XLXN_423), 
+                .O(XLXN_422));
+   Fa_MUSER_Proj1  XLXI_97 (.a(XLXN_20), 
+                           .b(XLXN_258), 
+                           .ci(XLXN_353), 
+                           .co(XLXN_36), 
+                           .s(XLXN_427));
+   Fa_MUSER_Proj1  XLXI_98 (.a(XLXN_21), 
+                           .b(XLXN_265), 
+                           .ci(XLXN_36), 
+                           .co(XLXN_38), 
+                           .s(XLXN_438));
+   Fa_MUSER_Proj1  XLXI_99 (.a(XLXN_22), 
+                           .b(XLXN_267), 
+                           .ci(XLXN_38), 
+                           .co(XLXN_233), 
+                           .s(XLXN_464));
+   Fa_MUSER_Proj1  XLXI_100 (.a(XLXN_12), 
+                            .b(XLXN_271), 
+                            .ci(XLXN_233), 
+                            .co(XLXN_245), 
+                            .s(XLXN_489));
+   GND  XLXI_101 (.G(XLXN_353));
+   (* HU_SET = "XLXI_107_12" *) 
+   M2_1_HXILINX_Proj1  XLXI_107 (.D0(XLXN_427), 
+                                .D1(XLXN_378), 
+                                .S0(M), 
+                                .O(R[0]));
+   INV  XLXI_115 (.I(XLXN_427), 
+                 .O(XLXN_378));
+   INV  XLXI_127 (.I(XLXN_438), 
+                 .O(XLXN_435));
+   (* HU_SET = "XLXI_128_15" *) 
+   M2_1_HXILINX_Proj1  XLXI_128 (.D0(XLXN_438), 
+                                .D1(XLXN_435), 
+                                .S0(M), 
+                                .O(XLXN_432));
+   (* HU_SET = "XLXI_129_16" *) 
+   M2_1_HXILINX_Proj1  XLXI_129 (.D0(XLXN_464), 
+                                .D1(XLXN_462), 
+                                .S0(M), 
+                                .O(R[2]));
+   INV  XLXI_130 (.I(XLXN_464), 
+                 .O(XLXN_462));
+   (* HU_SET = "XLXI_135_17" *) 
+   M2_1_HXILINX_Proj1  XLXI_135 (.D0(XLXN_489), 
+                                .D1(XLXN_488), 
+                                .S0(M), 
+                                .O(R[3]));
+   INV  XLXI_136 (.I(XLXN_489), 
+                 .O(XLXN_488));
+endmodule

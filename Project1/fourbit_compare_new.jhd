@@ -1,0 +1,9 @@
+MODULE fourbit_compare_new
+	SUBMODULE one_bit_compare_noless
+		INSTANCE XLXI_2
+	SUBMODULE one_bit_compare_noless
+		INSTANCE XLXI_3
+	SUBMODULE one_bit_compare_noless
+		INSTANCE XLXI_4
+	SUBMODULE one_bit_compare_noless
+		INSTANCE XLXI_5

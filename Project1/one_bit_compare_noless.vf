@@ -1,0 +1,54 @@
+////////////////////////////////////////////////////////////////////////////////
+// Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+////////////////////////////////////////////////////////////////////////////////
+//   ____  ____ 
+//  /   /\/   / 
+// /___/  \  /    Vendor: Xilinx 
+// \   \   \/     Version : 14.7
+//  \   \         Application : sch2hdl
+//  /   /         Filename : one_bit_compare_noless.vf
+// /___/   /\     Timestamp : 04/07/2017 11:51:04
+// \   \  /  \ 
+//  \___\/\___\ 
+//
+//Command: sch2hdl -intstyle ise -family virtex5 -verilog C:/Users/USER/Desktop/S0454012/Project1/one_bit_compare_noless.vf -w C:/Users/USER/Desktop/S0454012/ha/one_bit_compare_noless.sch
+//Design Name: one_bit_compare_noless
+//Device: virtex5
+//Purpose:
+//    This verilog netlist is translated from an ECS schematic.It can be 
+//    synthesized and simulated, but it should not be modified. 
+//
+`timescale 1ns / 1ps
+
+module one_bit_compare_noless(a, 
+                              b, 
+                              bigger, 
+                              equal);
+
+    input a;
+    input b;
+   output bigger;
+   output equal;
+   
+   wire XLXN_14;
+   wire XLXN_15;
+   wire XLXN_22;
+   wire bigger_DUMMY;
+   
+   assign bigger = bigger_DUMMY;
+   NAND2  XLXI_1 (.I0(a), 
+                 .I1(a), 
+                 .O(XLXN_14));
+   NAND2  XLXI_2 (.I0(b), 
+                 .I1(b), 
+                 .O(XLXN_15));
+   AND2  XLXI_3 (.I0(b), 
+                .I1(XLXN_14), 
+                .O(bigger_DUMMY));
+   AND2  XLXI_4 (.I0(XLXN_15), 
+                .I1(a), 
+                .O(XLXN_22));
+   NOR2  XLXI_5 (.I0(XLXN_22), 
+                .I1(bigger_DUMMY), 
+                .O(equal));
+endmodule
